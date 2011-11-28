@@ -81,7 +81,9 @@
 
 
   <!-- JavaScript at the bottom for fast page loading -->
-
+  <script>
+	result = <?php echo $result ?>;
+  </script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
 

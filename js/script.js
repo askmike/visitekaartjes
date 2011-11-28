@@ -1,8 +1,9 @@
 /* Author: Mike van Rossum */
 $(function(){
-	$('.result').each(function(){
-		for (i=0;i<=10;i++) {
-			$('.klaar').eq(10-i).delay(i*500).slideDown(500);
-		}
-	})
+	if(result) { //deze var halen we uit index, hij wordt geset door PHP
+		count = $('.klaar').size();
+		$('.klaar').each(function(i) {
+			$(this).delay((count-i)*500).slideDown(500);
+		});
+	}
 });
