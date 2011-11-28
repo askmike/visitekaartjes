@@ -32,7 +32,11 @@
 			</form>
 		</div>
 		<?php } else { 
-			
+			//we only need the file if we need to do something with user input
+			require('inc/functions.inc.php');
+			//get the data from POST
+			$safePost = getPostInput( array('naam','beroep') );
+			//loop 10 times to display 10 visitekaartjes
 			for ($i = 1; $i <= 10; $i++) { ?>
 				<div class='kaartje klaar'>
 					<div class='left'>
@@ -44,9 +48,9 @@
 					<div class="right">
 						<div class="black"></div>
 						<div class="rotate">
-							<?php echo $_POST['naam']; ?>
+							<?php echo $safePost['naam']; ?>
 							<span>
-								<?php echo $_POST['beroep']; ?>
+								<?php echo $safePost['beroep']; ?>
 							</span>
 						</div>
 					</div>
