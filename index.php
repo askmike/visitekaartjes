@@ -1,52 +1,65 @@
 <!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang=en><![endif]-->
+<!--[if IE 7]><html class="no-js ie7 oldie" lang=en><![endif]-->
+<!--[if IE 8]><html class="no-js ie8 oldie" lang=en><![endif]-->
+<!--[if gt IE 8]><!--> <html class=no-js lang=en> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
+  <meta charset=utf-8>
 
-  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
-       More info: h5bp.com/b/378 -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
 
   <title>Visitekaartjes Generator</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name=description content="visitekaartjes genator is een HvA schoolopdracht">
+  <meta name=author content="Mike van Rossum">
 
-  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-
-  <!-- CSS: implied media=all -->
-  <!-- CSS concatenated and minified via ant build script-->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- end CSS-->
-
-  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
-
+  
+  	<meta name=viewport content="width=device-width,initial-scale=1">
+	<link rel=stylesheet href='css/style.css'>
 </head>
-
-<body>
-
+<body <?php if(isset($_POST['submit'])) { echo 'class="result"'; }?>>
   <div id="container">
     <header>
 		<h1 class='ir'>
 			Visitekaartjes Generator
-		</h1>
-		AJAX / <a href='./'>PHP</a> / <a href='./'>JS</a> &#171; (<a href="./">code</a>)
+		</h1>PHP / 
+		<span class="comingsoon"><a href='./'>AJAX</a> / <a href='./'>JS</a></span>
+		 &#171; (<a href="https://github.com/askmike/visitekaartjes">code</a>)
     </header>
     <div id="main" role="main">
+	
+	<?php if(!isset($_POST['submit'])) { ?>
+	
 		<div class='kaartje'>
 			<form method='post'>
 				<input name='naam' placeholder='naam' />
 				<input name='beroep' placeholder='beroep' />
-				<input type="submit" value="maak" />
+				<input type="submit" value="maak" name="submit" />
 			</form>
 		</div>
+		<?php } else { 
+			for ($i = 1; $i <= 10; $i++) { ?>
+				<div class='kaartje klaar'>
+					<div class='left'>
+						<img src="img/kaartje.png" width="133" height="66">
+						<h2>
+							mijn realiteit
+						</h2>
+					</div>
+					<div class="right">
+						<div class="black"></div>
+						<div class="rotate">
+							<?php echo $_POST['naam']; ?>
+							<span>
+								<?php echo $_POST['beroep']; ?>
+							</span>
+						</div>
+					</div>
+				</div>
+			<?php }
+		} ?>
+		
+		<!--
 		<div class='kaartje klaar'>
 			<div class='left'>
 				<img src="img/kaartje.png" width="133" height="66">
@@ -63,7 +76,7 @@
 					</span>
 				</div>
 			</div>
-		</div>
+		</div> -->
     </div>
     <footer>
 

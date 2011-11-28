@@ -246,10 +246,6 @@ header {text-align:center}
 	width:220px;
 }
 
-.kaartje.klaar {
-	display:none;
-}
-
 .kaartje.klaar img {
 	background:black;
 }
