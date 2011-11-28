@@ -1,8 +1,5 @@
 <!doctype html>
-<!--[if lt IE 7]><html class="no-js ie6 oldie" lang=en><![endif]-->
-<!--[if IE 7]><html class="no-js ie7 oldie" lang=en><![endif]-->
-<!--[if IE 8]><html class="no-js ie8 oldie" lang=en><![endif]-->
-<!--[if gt IE 8]><!--> <html class=no-js lang=en> <!--<![endif]-->
+<html lang=nl>
 <head>
 	<meta charset=utf-8>
 	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
@@ -13,7 +10,7 @@
 	<link rel=stylesheet href='css/style.css'>
 </head>
 <?php $result = isset($_POST['submit']) ?>
-<body <?php if(isset($_POST['submit'])) { echo 'class="result"'; }?>>
+<body>
   <div id="container">
     <header>
 		<h1 class='ir'>
@@ -57,38 +54,16 @@
 				</div>
 			<?php }
 		} ?>
-		
-		<!--
-		<div class='kaartje klaar'>
-			<div class='left'>
-				<img src="img/kaartje.png" width="133" height="66">
-				<h2>
-					mijn realiteit
-				</h2>
-			</div>
-			<div class="right">
-				<div class="black"></div>
-				<div class="rotate">
-					Mike van Rossum
-					<span>
-						webdesigner
-					</span>
-				</div>
-			</div>
-		</div> -->
     </div>
   </div>
 
-
-  <!-- JavaScript at the bottom for fast page loading -->
   <script>
+	//need a better way to pass data from server to client.
 	result = <?php echo $result ?>;
   </script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
   <script defer src="js/script.js"></script>
-  <!-- end scripts-->
-
 	
   <script>
     var _gaq=[['_setAccount','UA-19313599-6'],['_trackPageview'],['_trackPageLoadTime']];
@@ -98,8 +73,6 @@
   </script>
 
 
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-       chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7 ]>
     <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
     <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
