@@ -4,19 +4,15 @@
 <!--[if IE 8]><html class="no-js ie8 oldie" lang=en><![endif]-->
 <!--[if gt IE 8]><!--> <html class=no-js lang=en> <!--<![endif]-->
 <head>
-  <meta charset=utf-8>
-
-  
-  <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-
-  <title>Visitekaartjes Generator</title>
-  <meta name=description content="visitekaartjes genator is een HvA schoolopdracht">
-  <meta name=author content="Mike van Rossum">
-
-  
+	<meta charset=utf-8>
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<title>Visitekaartjes Generator</title>
+	<meta name=description content="visitekaartjes genator is een HvA schoolopdracht">
+	<meta name=author content="Mike van Rossum">
   	<meta name=viewport content="width=device-width,initial-scale=1">
 	<link rel=stylesheet href='css/style.css'>
 </head>
+<?php $result = isset($_POST['submit']) ?>
 <body <?php if(isset($_POST['submit'])) { echo 'class="result"'; }?>>
   <div id="container">
     <header>
@@ -27,9 +23,7 @@
 		 &#171; (<a href="https://github.com/askmike/visitekaartjes">code</a>)
     </header>
     <div id="main" role="main">
-	
-	<?php if(!isset($_POST['submit'])) { ?>
-	
+	<?php if(!$result) { ?>
 		<div class='kaartje'>
 			<form method='post'>
 				<input name='naam' placeholder='naam' />
@@ -38,6 +32,7 @@
 			</form>
 		</div>
 		<?php } else { 
+			
 			for ($i = 1; $i <= 10; $i++) { ?>
 				<div class='kaartje klaar'>
 					<div class='left'>
