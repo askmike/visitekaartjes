@@ -25,12 +25,6 @@ class Controller{
 		$data = $this->model->getData();
 		$this->getPage('results', $data);
 	}
-	
-	function getPage($view, $data) {
-		$this->load->view('header');
-		$this->load->view($view, $data);
-		$this->load->view('footer', $data);
-	}
 }
 
 ?>
