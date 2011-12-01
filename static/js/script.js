@@ -13,7 +13,7 @@ $(function(){
 			//check if everything is filled
 			if (beroep && naam) {
 				//do a request and POST the vars
-				$.getJSON('http://localhost/sss/2/visitekaartjes/json?naam=' + naam + '&beroep=' + beroep,
+				$.getJSON(window.location.href + '/../json?naam=' + naam + '&beroep=' + beroep,
 				function(data) {
 					for(i = 0; i < 10; i++) {
 						$('.kaartje.template').clone().removeClass('template').addClass('klaar').appendTo('#container');
