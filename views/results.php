@@ -1,7 +1,7 @@
 <?php for ($i = 1; $i <= 10; $i++) { ?>
 	<div class='kaartje klaar'>
 		<div class='left'>
-			<img src="img/kaartje.png" width="133" height="66">
+			<img src="static/img/kaartje.png" width="133" height="66">
 			<h2>
 				mijn realiteit
 			</h2>

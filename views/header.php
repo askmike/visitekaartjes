@@ -7,16 +7,13 @@
 	<meta name=description content="visitekaartjes genator is een HvA schoolopdracht">
 	<meta name=author content="Mike van Rossum">
   	<meta name=viewport content="width=device-width,initial-scale=1">
-	<link rel=stylesheet href='css/style.css'>
+	<link rel=stylesheet href='static/css/style.css'>
 </head>
-<?php $result = isset($_POST['submit']) ?>
-<body>
+<body class='<?php echo $request; ?>'> 
   <div id="container">
     <header>
 		<h1 class='ir'>
 			Visitekaartjes Generator
-		</h1>PHP / 
-		<span class="comingsoon"><a href='./'>AJAX</a> / <a href='./'>JS</a></span>
-		 &#171; (<a href="https://github.com/askmike/visitekaartjes">code</a>)
+		</h1><?php echo $menu;?>
     </header>
     <div id="main" role="main">

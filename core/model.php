@@ -2,11 +2,10 @@
 
 class Model {
 	
-//	public $data;
+	public $vars = array('naam','beroep');
 	
 	public function getData() {
-		$data = $this->getPostInput( array('naam','beroep') );
-		$data['result'] = true;
+		$data = $this->getPostInput( $this->vars );
 		
 		return $data;
 	}
@@ -46,12 +45,24 @@ class Model {
 		return $string;
 	}
 
-	function getPostInput($input) {
+	function getPostInput() {
+		$input = $this->vars;
 		//loop whole input array
 		for($i = 0, $size = sizeof($input); $i < $size; ++$i)
 		{
 			//map input pairs items to (safe) POST array pairs and store them in output array
 		    $output[$input[$i]] = $this->transform_HTML($_POST[$input[$i]]);
+		}
+		return $output;
+	}
+	
+	public function getGetInput() {
+		$input = $this->vars;
+		//loop whole input array
+		for($i = 0, $size = sizeof($input); $i < $size; ++$i)
+		{
+			//map input pairs items to (safe) POST array pairs and store them in output array
+		    $output[$input[$i]] = $this->transform_HTML($_GET[$input[$i]]);
 		}
 		return $output;
 	}

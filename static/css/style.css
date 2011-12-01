@@ -92,6 +92,10 @@ header {text-align:center}
 	right:0;
 }
 
+.kaartje.template {
+	display:none;
+}
+
 .kaartje.klaar .right span {
 	display:block;
 	font-style:italic;
