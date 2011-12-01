@@ -27,6 +27,11 @@ header {text-align:center}
 	text-decoration: line-through;
 }
 
+.code {
+	font-style:italic;
+	display:block;
+}
+
 .kaartje {
 	width:428px;
 	height:170px;

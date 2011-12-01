@@ -14,6 +14,6 @@
     <header>
 		<h1 class='ir'>
 			Visitekaartjes Generator
-		</h1><?php echo $menu;?>
+		</h1><?php echo $menu;?> <span class='code'>(<a href="https://github.com/askmike/visitekaartjes">check hier de code</a>)</span>
     </header>
     <div id="main" role="main">
